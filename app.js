@@ -44,13 +44,23 @@ const client = redis.createClient({
     port: REDIS_PORT
 });
 
-
-
 (async () => {
     await client.connect();
 })();
 
 
+client.on('error', function(err) {
+    console.log('error al conectar con redis');
+    process.exit();
+});
+
+connection.connect(function(err) {
+    if (err) {
+        console.error('error al conectar MySQL');
+        console.error(err);
+        process.exit();
+    }
+});
 
 
 /**
@@ -230,20 +240,7 @@ app.post('/get-statistics', async function (req, res) {
 
 });
 
-client.on('error', function(err) {
-    
-    console.log('error al conectar con redis');
 
-    process.exit();
-});
-
-connection.connect(function(err) {
-    if (err) {
-        console.error('error al conectar MySQL');
-        console.error(err);
-        process.exit();
-    }
-});
 
 /**
 * start server
