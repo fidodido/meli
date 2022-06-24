@@ -1,0 +1,150 @@
+{
+	"id": "73d46942-6d70-a168-63b1-0bcf0b4f73e3",
+	"name": "meli",
+	"description": "",
+	"order": [
+		"0a424c26-f1fb-2d0f-1ca4-2d98cc63bd28",
+		"334d0145-3ec9-f1b3-0161-e6a426437ff4",
+		"7e1b10d7-d397-966c-6c0b-26a7cbd8040c",
+		"cd984b3e-317a-0f88-6d9a-690d1662ea39"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1655838165394,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "0a424c26-f1fb-2d0f-1ca4-2d98cc63bd28",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/get-short-url",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "url",
+					"value": "https://armistic.cl",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1655871969053,
+			"name": "get-short-url",
+			"description": "",
+			"collectionId": "73d46942-6d70-a168-63b1-0bcf0b4f73e3",
+			"responses": []
+		},
+		{
+			"id": "334d0145-3ec9-f1b3-0161-e6a426437ff4",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/get-long-url",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "url",
+					"value": "https://me.li/7DJhLX",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1655848864237,
+			"name": "get-long-url",
+			"description": "",
+			"collectionId": "73d46942-6d70-a168-63b1-0bcf0b4f73e3",
+			"responses": []
+		},
+		{
+			"id": "7e1b10d7-d397-966c-6c0b-26a7cbd8040c",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/delete-short-url",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "73d46942-6d70-a168-63b1-0bcf0b4f73e3",
+			"data": [
+				{
+					"key": "url",
+					"value": "https://me.li/7DJhLX",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"name": "delete-short-url",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1655849250563,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "cd984b3e-317a-0f88-6d9a-690d1662ea39",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:3000/8Jpbse",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1655871971587,
+			"name": "redirect",
+			"description": "",
+			"collectionId": "73d46942-6d70-a168-63b1-0bcf0b4f73e3",
+			"responses": []
+		}
+	]
+}
