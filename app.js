@@ -17,6 +17,7 @@ var app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 
 
+const SERVER_PORT = 80;
 const REDIS_HOST = 'localhost';
 const REDIS_PORT = 6379;
 const MYSQL_HOST = 'localhost';
@@ -27,7 +28,7 @@ const MIN_NUMBER_BASE_62 = 916132832;
 
 
 
-const SHORT_DOMAIN =  'http://localhost:3000/';
+const SHORT_DOMAIN =  'http://66.42.79.229/';
 app.SHORT_DOMAIN = SHORT_DOMAIN;
 
 // conexión a MySQL.
@@ -66,13 +67,12 @@ connection.connect(function(err) {
 /**
  *
  * URL
- *
+ * ejemplo: curl http://66.42.79.229/15FTGA
  */
 app.get('/*', async function (req, res) {
 
     // Obtenemos el codigo corto de la URL.
     var url_code = req.params[0];
-
 
     // Obtenemos el ID de la URL corta.
     var id = base62.decode(url_code);
@@ -85,7 +85,6 @@ app.get('/*', async function (req, res) {
         var long_url = await client.get(url_code);
 
         res.redirect(long_url);
-
 
     } else {
 
@@ -113,6 +112,7 @@ app.get('/*', async function (req, res) {
 
 /**
  * Obtiene una URL corta de una URL Larga.
+ * ejemplo: curl -d 'url=http://mercadolibre.cl' -X POST http://66.42.79.229/get-short-url
  */
 app.post('/get-short-url', async function (req, res) {
 
@@ -151,6 +151,7 @@ app.post('/get-short-url', async function (req, res) {
 
 /**
  * Borra una URL corta.
+ * curl -d 'url=http://66.42.79.229/15FTGl' -X POST http://66.42.79.229/delete-short-url
  */
 app.post('/delete-short-url', async function (req, res) {
 
@@ -183,6 +184,7 @@ app.post('/delete-short-url', async function (req, res) {
 
 /**
  * Obtiene una URL larga de una URL corta.
+ * ejemplo: curl -d 'url=http://66.42.79.229/15FTGl' -X POST http://66.42.79.229/get-long-url
  */
 app.post('/get-long-url', async function (req, res) {
 
@@ -216,6 +218,7 @@ app.post('/get-long-url', async function (req, res) {
 
 /**
  * Obtiene estadísticas.
+ * ejemplo: curl -X POST http://66.42.79.229/get-statistics
  */
 app.post('/get-statistics', async function (req, res) {
 
@@ -245,8 +248,8 @@ app.post('/get-statistics', async function (req, res) {
 /**
 * start server
 */
-app.listen(3000, function () {
-    console.log('--- listening on port 3000----');
+app.listen(80, function () {
+    console.log('--- listening on port ' + SERVER_PORT + '----');
 });
 
 module.exports = app;
